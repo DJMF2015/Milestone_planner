@@ -2,15 +2,23 @@
 <html lang="en" dir="ltr">
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <title>Mileston Planner</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
-  <!-- <style media="screen">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="style.css">
+  <style media="screen">
   .date{
     background-color:#C82333 ;
     height: 120px;
@@ -26,58 +34,170 @@
   }
 </style> -->
 </head>
-  <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<div class="navbar-brand">Milestone Planner</div>
 
-<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button> -->
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div classa="collapse navbar-collapse mx-auto" id="navbarNav">
-  <ul class="navbar-nav float-right">
-    <li  class="nav-item dropdown btn btn-danger" style="margin-right: 70px;">
-     <a class="nav-link btn-sm " style="color: ghostwhite;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      +
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="width:500px;height:500px;" >
-     <form class="form-group mx-auto" style="width:80%;" action="/add" method="POST">
-      <h3>ADD TASK </h3><br>
-      <label for="">Task Name : </label><br>
-      <input type="text" class="form-control" name="name" value="">
+    <div class="collapse navbar-collapse mx-auto " id="navbarNav">
+      <ul class="navbar-nav float-left ">
+
+
+        <li class="nav-item dropdown btn btn-danger" style="margin-right: 70px;">
+          <a class="nav-link btn-sm " style="color: white;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            +
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="width:500px;height:500px;">
+            <form class="form-group mx-auto" style="width:85%;" action="/add" method="post">
+              <h3>ADD A TASK </h3><br>
+              <label for="">Task Name : </label><br>
+              <input type="text" class="form-control" name="name" value="">
+              <br>
+              <label for="">Task Category</label>
+              <br>
+              <select class="form-control" name="name" value="">
+                <option value="">--Please choose an option--</option>
+                <option value="urgent" style="color:black; font-weight: 600; color:white; background-color: firebrick;">
+                  Urgent Priority</option>
+                <option value="medium"
+                  style="color: black; background-color:lightsteelblue;  color:white;  font-weight: 600;">Medium
+                  Priority</option>
+                <option value="low" style="color: black; background-color:green; color:white; font-weight: 600;">Low
+                  Priority</option>
+              </select>
+              <br>
+              <button type="submit" class="btn btn-primary" name="button">Add Task</button>
+            </form>
+
+          </div>
+        </li>
+        <a class="navbar-brand float-right" style="font-size: 20px;margin-right: 40px; position: absolute; right:0;"
+          href="/">
+        </a>
+      </ul>
+    </div>
+  </nav>
+  <!-- <div class="container-sm"> -->
+  <div class="jumbotron " style="height: 900px;">
+
+    <div class="ml-auto text-center">
+      <h2 class="display-4" style="font-size: 42px;">MOST RECENT TASKS</h2>
       <br>
-      <label for="">Task Category</label>
-      <br>
-      <select class="form-control" name="name" value="">
-        <option value="urgent">Urgent Priority</option>
-        <option value="medium">Medium Priority</option>
-        <option value="low">Low Priority</option>
-      </select>
-      <br>
-      <button type="submit" class="btn btn-primary" name="button">Add Task</button>
-    </form>
-  
+      <!-- 1 row, 3 cols and cards-->
+      <div class="row" style="margin:auto">
+        <div class="col-sm" style="margin-bottom: 30px;">
+          <div class="card-deck">
+            <div class="card" style="width:24rem;">
+              <div class="card-header" style="background-color: #FF4136;">
+                <div class="card-body">
+                  <p style="color: white;">IMPORTANT PRIORITY</p>
+
+                  <ul class="list-group list-group-flush">
+                    <!-- <% for (let i = 0; variable.length; i++){ %> -->
+
+                    <!-- https://getbootstrap.com/docs/4.4/components/list-group/#flush -->
+
+                    <li class="list-group-item">
+
+                      <div class="row">
+                        <div class="col-1">
+                          <form class="" action="/" method="POST">
+                            <button type="submit" class="btn btn-sm btn-danger" name="button">X</button>
+                          </form>
+                        </div>
+                        <div class="col-9">
+                          <!-- <%= important[i]  %> -->
+                        </div>
+                      </div>
+                    </li>
+
+
+                    <!-- <% } %> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- card two medium priority-->
+        <div class="col-sm" style="margin-bottom: 30px;">
+          <div class="card" style="width:24rem;">
+            <div class="card-header" style="background-color: #563D7C;">
+              <div class="card-body">
+                <p style="color: white;">MEDIUM PRIORITY </p>
+
+                <ul class="list-group list-group-flush">
+                  <!-- <% for (let i = 0; variable.length; i++){ %> -->
+
+                  <!-- https://getbootstrap.com/docs/4.4/components/list-group/#flush -->
+
+                  <li class="list-group-item">
+
+                    <div class="row">
+                      <div class="col-1">
+                        <form class="" action="/" method="POST">
+                          <button type="sibmit" class="btn btn-sm btn-danger" name="button">X</button>
+                        </form>
+                      </div>
+                      <div class="col-9">
+                        <!-- <%= important[i]  %> -->
+                      </div>
+                    </div>
+                  </li>
+
+                  </li>
+                  <!-- <% } %> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm" style="margin-bottom: 30px; ">
+          <div class="card" style="width: 24rem;">
+            <div class="card-header" style="background-color:seagreen;">
+              <div class="card-body">
+                <p style="color: white;">LOW PRIORITY </p>
+                <ul class="list-group list-group-flush">
+
+
+                  <!-- <%  for(var i = 0; i < prior.length; i++)    { %> -->
+                  <li class="list-group-item">
+                    <div class="row">
+                      <div class="col-1">
+                        <form class="" action="/removeprior" method="post">
+                          <button type="submit" class="btn btn-sm btn-danger" name="button">x </button>
+
+                        </form>
+                      </div>
+                      <div class="col-9">
+                        <!-- <%= prior[i]  %> -->
+                      </div>
+
+                    </div>
+
+
+                  </li>
+                  <!-- <%    }  %> -->
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br>
+    </div>
   </div>
-  </li>
-  <a class="navbar-brand float-right" style="font-size: 20px;margin-right: 40px; position: absolute; right:0;" href="/">
-  </a>
-</ul>
-</div>
-</nav>
 
-      <div class="jumbotron" style="height: 920px;">
-        <div class="ml-auto text-center">
-  <h2 class="display-4" style="font-size: 42px;">MOST RECENT TASKS</h2>
-  <br>
+  </div>
 
+</body>
 
-      </div>
-      </div>
-  </body>
 </html>
