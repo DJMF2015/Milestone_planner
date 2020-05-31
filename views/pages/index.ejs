@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Mileston Planner</title>
+  <title>Milestone Planner</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -30,6 +30,7 @@
 
     <div class="collapse navbar-collapse mx-auto " id="navbarNav">
       <ul class="navbar-nav float-left ">
+   
         <li class="nav-item dropdown btn btn-danger" style="margin-right: 70px;">
           <a class="nav-link btn-sm " style="color: white;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -37,13 +38,13 @@
           </a>
 
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="width:500px;height:500px;">
-           
+
             <form class="form-group mx-auto" style="width:85%;" action="/add" method="post">
               <h3>ADD A TASK </h3><br>
               <label for="">Task Name : </label><br>
-              <input type="text" class="form-control" name="name" value=""><br>
+              <input type="text" class="form-control" name="title" value=""><br>
               <label for="">Task Category</label> <br>
-              <select class="form-control" name="category" value=""> 
+              <select class="form-control" name="priority" value="">
                 <option value="urgent" style="color:black; font-weight: 600; color:white; background-color: firebrick;">
                   Urgent Priority</option>
                 <option value="medium"
@@ -64,7 +65,7 @@
       </ul>
     </div>
   </nav>
-  <!-- <div class="container-sm"> -->
+  <!-- <div class="container-sm container-fluid"> -->
   <div class="jumbotron " style="height: 900px;">
 
     <div class="ml-auto text-center">
@@ -72,33 +73,33 @@
       <br>
       <!-- 1 row, 3 cols and cards-->
       <div class="row" style="margin:auto">
-        <div class="col-sm" style="margin-bottom: 30px;">
-          <div class="card-deck">
-            <div class="card" style="width:24rem;">
-              <div class="card-header" style="background-color: #FF4136;">
-                <div class="card-body">
-                  <p style="color: white;">IMPORTANT PRIORITY</p>
+        <div class="col-sm" style="margin-bottom: 30px; ">
+          <div class="card" style="width: 24rem;">
+            <div class="card-deck">
+              <div class="card" style="width:24rem;">
+                <div class="card-header" style="background-color: #FF4136;">
+                  <div class="card-body">
+                    <p style="color: white;">IMPORTANT PRIORITY</p>
 
-                  <ul class="list-group list-group-flush">
+                    <ul class="list-group list-group-flush">
+                      <% for(var i=0; i < high.length; i++ ){ %>
 
+                      <li class="list-group-item">
 
-
-
-                    <li class="list-group-item">
-
-                      <div class="row">
-                        <div class="col-1">
-                          <form class="" action="/deletehigh" method="POST">
-                            <button type="submit" class="btn btn-sm btn-danger" name="button">X</button>
-                          </form>
+                        <div class="row">
+                          <div class="col-1">
+                            <form class="" action="/deletehigh" method="post">
+                              <button type="submit" class="btn btn-sm btn-danger" name="button">X</button>
+                            </form>
+                          </div>
+                          <div class="col-9">
+                            <%= high[i]  %>
+                          </div>
                         </div>
-                        <div class="col-9">
-
-                        </div>
-                      </div>
-                    </li>
-
-                  </ul>
+                      </li>
+                      <% } %>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -113,8 +114,7 @@
                 <p style="color: white;">MEDIUM PRIORITY </p>
 
                 <ul class="list-group list-group-flush">
-
-
+                  <%  for(var i = 0; i < medium.length; i++)     { %>
 
                   <li class="list-group-item">
 
@@ -125,12 +125,11 @@
                         </form>
                       </div>
                       <div class="col-9">
+                        <%= medium[i]  %>
                       </div>
                     </div>
-                  </li>
-
-                  </li>
-
+                </li>  
+                  <% } %>
                 </ul>
               </div>
             </div>
@@ -143,25 +142,21 @@
               <div class="card-body">
                 <p style="color: white;">LOW PRIORITY </p>
                 <ul class="list-group list-group-flush">
-
+                  <% for (var i = 0; i < low.length; i++) {  %>
 
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-1">
                         <form class="" action="/deletelow" method="post">
                           <button type="submit" class="btn btn-sm btn-danger" name="button">x </button>
-
                         </form>
                       </div>
                       <div class="col-9">
-
+                    <%= low[i] %>
                       </div>
-
                     </div>
-
-
                   </li>
-
+                  <% } %>
                 </ul>
               </div>
             </div>
