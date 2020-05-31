@@ -14,19 +14,14 @@ app.set(express.static(__dirname + '/'));
 
 //index page to render all data
 app.get('/', function (req, res) {
-    res.render('pages/index', { high: highimportance, medium: mediumimportance, low: lowimportance });
-
-});
-
-//get request to handle current date and render all data incl. tasks
-app.get('/', function (req, res) {
-    var date = Date();
+    var date = new Date();
     var Day = date.getDay();
     var year = date.getFullYear();
     var month = date.getMonth();
     var fulldate = date.getDate();
     var Today = "";
     var fdata = "";
+
     switch (Day) {
         case 0:
             Today = "Sunday";
@@ -51,12 +46,9 @@ app.get('/', function (req, res) {
             break;
         default: console.log("Error on date formatting. Check log")
     };
-
-    fdata = Today + "- " + fulldate + '- ' + month + "- " + year;
-    res.render('pages/index', { info: fdata, high: highimportance, medium: mediumimportance, low: lowimportance })
-})
-
-
+    fdata = Today + " : " + fulldate + ' / ' + month + " / " + year;
+    res.render('pages/index', { info: fdata, high: highimportance, medium: mediumimportance, low: lowimportance });
+});
 
 //function to handle post request for additonal user tasks
 app.post('/add', function (req, res) {
