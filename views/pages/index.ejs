@@ -7,16 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Milestone Planner</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+  crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+  crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+  crossorigin="anonymous"></script>
 
 </head>
 
@@ -28,54 +28,56 @@
 
     <li class="nav-item dropdown btn btn-primary" style="margin-right: 800px; margin-left: 60px;">
       <a class="nav-link btn-sm " style="color: #ffffff;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Create Task
-      </a>
+      aria-haspopup="true" aria-expanded="false">
+      Create Task
+    </a>
 
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="width:500px;height:500px;">
-        <br>
-        <form class="form-group mx-auto " style="width:85%; " action="/add" method="post">
-          <h3>ADD A TASK </h3><br>
-          <label for="">Task Name : </label><br>
-          <input type="text" class="form-control" name="title" value="" required><br>
-          <label for="">Task Category</label> <br>
-          <select class="form-control" name="priority" value="">
-            <option value="urgent" style="color:black; font-weight: 600; color:white; background-color: firebrick;">
-              Urgent Priority</option>
-            <option value="medium"
-              style="color: black; background-color:lightsteelblue;  color:white;  font-weight: 600;">Medium
-              Priority</option>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="width:500px;height:500px;">
+      <br>
+      <form class="form-group mx-auto " style="width:85%; " action="/add" method="post">
+        <h3>ADD A TASK </h3><br>
+        <label for="">Task Name : </label><br>
+        <input type="text" class="form-control" name="title" value="" required><br>
+        <label for="">Task Category</label> <br>
+        <select class="form-control" id="priority" name="priority" value="">
+          <option value="none" selected disabled hidden>
+           Select an Option  </option>
+          <option value="urgent" style="color:black; font-weight: 600; color:white; background-color: firebrick;">
+            Urgent Priority</option>
+            <option value="medium" style="color: black; background-color:orange;  color:white;  font-weight: 600;">Medium
+            Priority</option>
             <option value="low" style="color: black; background-color:green; color:white; font-weight: 600;">Low
               Priority</option>
-          </select>
-          <br>
-          <button type="submit" class="btn btn-success" name="button">Add Task</button>
-        </form>
+            </select>
 
-      </div>
-    </li>
+            <br>
+            <button type="submit" class="btn btn-success" name="button">Add Task</button>
+          </form>
+
+        </div>
+      </li>
 
     </ul>
-    </div>
-  </nav>
+  </div>
+</nav>
 
-  <div class="jumbotron " style="height: 900px;">
+<div class="jumbotron " style="height: 900px;">
 
-    <div class="ml-auto text-center">
-      <h2 class="display-4 " style="font-size: 42px;">MOST RECENT TASKS</h2>
-      <br>
-      <!-- 1 row, 3 cols and cards-->
-      <div class="row" style="margin:auto">
-        <div class="col-sm" style="margin-bottom: 30px; ">
-          <div class="card" style="width: 24rem;">
-            <div class="card-deck">
-              <div class="card" style="width:24rem;">
-                <div class="card-header" style="background-color: #FF4136;">
-                  <div class="card-body">
-                    <p style="color: white;">HIGH PRIORITY</p>
+  <div class="ml-auto text-center">
+    <h2 class="display-4 " style="font-size: 42px;">MOST RECENT TASKS</h2>
+    <br>
+    <!-- 1 row, 3 cols and cards-->
+    <div class="row" style="margin:auto">
+      <div class="col-sm" style="margin-bottom: 30px; ">
+        <div class="card" style="width: 24rem;">
+          <div class="card-deck">
+            <div class="card" style="width:24rem;">
+              <div class="card-header" style="background-color: #FF4136;">
+                <div class="card-body">
+                  <p style="color: white;">HIGH PRIORITY</p>
 
-                    <ul class="list-group list-group-flush">
-                      <% for(var i=0; i < high.length; i++ ){ %>
+                  <ul class="list-group list-group-flush">
+                    <% for(var i=0; i < high.length; i++ ){ %>
 
                       <li class="list-group-item">
 
@@ -109,67 +111,67 @@
                 <ul class="list-group list-group-flush">
                   <%  for(var i = 0; i < medium.length; i++)     { %>
 
-                  <li class="list-group-item">
+                    <li class="list-group-item">
 
-                    <div class="row">
-                      <div class="col-1">
-                        <form class="" action="/deletemedium" method="POST">
-                          <button type="submit" class="btn btn-sm btn-danger" name="button">X</button>
-                        </form>
+                      <div class="row">
+                        <div class="col-1">
+                          <form class="" action="/deletemedium" method="POST">
+                            <button type="submit" class="btn btn-sm btn-danger" name="button">X</button>
+                          </form>
+                        </div>
+                        <div class="col-9">
+                          <%= medium[i]  %>
+                        </div>
                       </div>
-                      <div class="col-9">
-                        <%= medium[i]  %>
-                      </div>
-                    </div>
-                  </li>
-                  <% } %>
-                </ul>
+                    </li>
+                    <% } %>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-sm" style="margin-bottom: 30px; ">
-          <div class="card" style="width: 24rem;">
-            <div class="card-header" style="background-color:seagreen;">
-              <div class="card-body">
-                <p style="color: white;">LOW PRIORITY </p>
-                <ul class="list-group list-group-flush">
-                  <% for (var i = 0; i < low.length; i++) {  %>
+          <div class="col-sm" style="margin-bottom: 30px; ">
+            <div class="card" style="width: 24rem;">
+              <div class="card-header" style="background-color:seagreen;">
+                <div class="card-body">
+                  <p style="color: white;">LOW PRIORITY </p>
+                  <ul class="list-group list-group-flush">
+                    <% for (var i = 0; i < low.length; i++) {  %>
 
-                  <li class="list-group-item">
-                    <div class="row">
-                      <div class="col-1">
-                        <form class="" action="/deletelow" method="post">
-                          <button type="submit" class="btn btn-sm btn-danger" name="button">x </button>
-                        </form>
-                      </div>
-                      <div class="col-9">
-                        <%= low[i] %>
-                      </div>
-                    </div>
-                  </li>
-                  <% } %>
-                </ul>
+                      <li class="list-group-item">
+                        <div class="row">
+                          <div class="col-1">
+                            <form class="" action="/deletelow" method="post">
+                              <button type="submit" class="btn btn-sm btn-danger" name="button">x </button>
+                            </form>
+                          </div>
+                          <div class="col-9">
+                            <%= low[i] %>
+                          </div>
+                        </div>
+                      </li>
+                      <% } %>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <br><br>
+
         </div>
       </div>
-      <br><br>
+      <footer class="bg-dark text-white mt-5">
+        <div class="container-fluid py-5">
+          <div class="md-auto text-center">
+            <div class="col-md-5"> Milestone Planner<br>David Fulton : <%= info %> </div>
+          </div>
+        </div>
 
-    </div>
-  </div>
-  <footer class="bg-dark text-white mt-5">
-    <div class="container-fluid py-5">
-      <div class="md-auto text-center">
-        <div class="col-md-5"> Milestone Planner<br>David Fulton : <%= info %> </div>
-      </div>
-    </div>
-
-  </footer>
-</body>
+      </footer>
+    </body>
 
 
 
-</html>
+    </html>
